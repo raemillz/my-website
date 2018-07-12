@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
-  has_many :projects
+  has_many :projects, dependent: :destroy
 
   validates_uniqueness_of :name
   validates_presence_of :name

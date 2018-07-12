@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-  before_action :set_user, except: [:new]
-  skip_before_filter :authenticate, only: [:new, :create]
-
+  before_action :set_user, only: [:new, :edit, :show, :update]
+  before_action :authenticate
+  
   def index
   end
 
