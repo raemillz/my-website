@@ -1,2 +1,12 @@
-<h1>Projects Page ID </h1>
-<%= link_to 'Back To All Projects', projects_path %>
+<div class="container">
+  <h1>Project: <%=@project.name %></h1>
+  <li>Description: <%=@project.description %></li>
+  <li>Github URL: <%=@project.github %></li>
+  <li>Project URL: <%=@project.projecturl%></li>
+</div>
+
+<br><%= link_to 'Edit Project', edit_project_path %>
+<br><%= link_to 'Back To All Projects', projects_path %>
+<% if current_user.admin %>
+  <br><%= button_to "Delete", @porject, :method => :delete %>
+<% end %>

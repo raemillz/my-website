@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  before_action :set_project, only: [:edit, :show, :update]
+  before_action :set_project, only: [:edit, :show, :update, :destroy]
   before_action :authenticate, only: [:new, :edit, :create, :update]
 
   def index
@@ -34,12 +34,17 @@ class ProjectsController < ApplicationController
     redirect_to @project
   end
 
+  def destroy
+    @project.destroy
+    redirect_to projects_path
+  end
+
   private
   def set_project
     @project = Project.find(params[:id])
   end
 
   def project_params
-    params.require(:project).permit(:name, :email, :password)
+    params.require(:project).permit(:name, :description, :github, :projecturl, :user_id)
   end
 end
