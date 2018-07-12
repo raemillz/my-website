@@ -1,5 +1,5 @@
 class Project < ApplicationRecord
-  belongs_to :project
+  belongs_to :user
 
   def index
     @projects = project
@@ -34,7 +34,7 @@ class Project < ApplicationRecord
 
   private
   def project_params
-    params.require(:project).permit(:name, :description, :github, :projecturl, :admin_id)
+    params.require(:project).permit(:name, :description, :github, :projecturl, :user_id)
   end
-  
+
 end
