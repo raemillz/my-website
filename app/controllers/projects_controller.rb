@@ -1,5 +1,6 @@
 class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit]
+  before_action :authenticate, only: [:create, :new, :edit, :update]
 
   def index
     @projects = Project.all

@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  skip_before_filter :authenticate, only: [:create, :destroy]
+  
   def new
     @user = User.new
   end
