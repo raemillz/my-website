@@ -1,1 +1,28 @@
-<h1>Projects Create New Page</h1>
+<h1>New Project</h1>
+<%= form_for @project do |f| %>
+
+  <div class="field">
+    <%= f.label :name, "Project Name" %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :description, "Project Description" %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :github, "Github URL" %>
+    <%= f.text_field :github %>
+  </div>
+
+  <div class="field">
+    <%= f.label :projecturl, "Project URL" %>
+    <%= f.text_field :projecturl %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Submit" %>
+  </div>
+
+<% end %>
