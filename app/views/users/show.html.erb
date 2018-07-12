@@ -1,2 +1,6 @@
-<h1>User's Page</h1>
-<p><%= current_user.name %></p>
+<div class="container">
+  <h1><%= current_user.name %>'s Dashboard</h1>
+  <p>
+    <%= link_to 'Add New Project', new_project_path %>
+  </p>
+</div>
